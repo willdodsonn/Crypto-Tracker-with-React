@@ -1,25 +1,31 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Coins from "./coins";
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
+const Home = (props) => {
+	const [coins, setCoins] = useState([]);
+
+	const url =
+		"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false";
+
+	useEffect(() => {
+		axios
+			.get(url)
+			.then((response) => {
+				setCoins(response.data);
+				console.log(response.data[0]);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}, []);
+
 	return (
-		<div>
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<>
+			<Coins coins={coins} />
+		</>
 	);
 };
 

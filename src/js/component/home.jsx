@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Coins from "./coins";
+import Topbar from "./Navbar";
 //include images into your bundle
 
 //create your first component
-const Home = (props) => {
+const Home = () => {
 	const [coins, setCoins] = useState([]);
 
 	const url =
@@ -24,6 +25,7 @@ const Home = (props) => {
 
 	return (
 		<>
+			<Topbar />
 			<Coins coins={coins} />
 		</>
 	);

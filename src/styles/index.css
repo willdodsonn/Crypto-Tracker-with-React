@@ -1,4 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
+*{
+    box-sizing:  border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #26272b;
+    color: #f4f4f4;
+}
+a{
+    color: #f4f4f4;
+    /* text-decoration: none; */
+}
+
+h1{
+    text-align: center;
+    margin: 1rem;
+}
+
+.navbar-brand{
+   margin: auto;
+}
+.icon{
+    border-radius: 50%;
+}
 /* 
 
     You can write your own styles here...

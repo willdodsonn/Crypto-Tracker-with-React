@@ -21,7 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #3d3c3c;
+    background-color: #222121;
     box-shadow: 0x 0px 12px;
     border-radius: 8px;
     margin: 2rem 1rem;
@@ -35,16 +35,22 @@
     cursor: pointer;    
 }
 
-img {
+/* img {
     height: 40px;
     margin-right: 8px;
     width: auto;
    
-}
+} */
 
 .img-symbol{
     display: flex;
    font-size: large;
+}
+
+.img-symbol img{
+    height: 40px;
+    margin-right: 65px;
+    width: auto;
 }
 
 @media screen and (max-width: 720px) {
